@@ -363,6 +363,12 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
   </div>
   <div class="settings-divider"></div>
   <div class="settings-section">
+    <div class="settings-label">DESKTOP WIDGET SYNC</div>
+    <div class="settings-note">Export your data so the desktop widget can read it. Put the downloaded file in your dayscore-widget folder.</div>
+    <button class="url-save-btn" id="exportWidgetBtn">⬇ Export to Widget</button>
+  </div>
+  <div class="settings-divider"></div>
+  <div class="settings-section">
     <div class="settings-note">Data is stored securely in Firebase under your Google account. Nobody else can access your tasks.</div>
   </div>
 </div>
@@ -813,7 +819,19 @@ function checkDueNotifications(){
 }
 setInterval(checkDueNotifications,60000);
 
-// ── SETTINGS ───────────────────────────────────────
+// ── EXPORT TO WIDGET ───────────────────────────────
+function exportToWidget(){
+  const data = JSON.stringify(state, null, 2);
+  const blob = new Blob([data], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'dayscore-cache.json';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+document.getElementById('exportWidgetBtn').addEventListener('click', exportToWidget);
 const TDESC={10:'just show up',25:'light effort counts',50:'complete half or more',75:'almost everything done',100:'every single task'};
 function thresholdDesc(v){ const keys=Object.keys(TDESC).map(Number).sort((a,b)=>a-b); for(let i=keys.length-1;i>=0;i--) if(v>=keys[i]) return TDESC[keys[i]]; return ''; }
 function updateSettingsUI(){
