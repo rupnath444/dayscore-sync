@@ -30,30 +30,21 @@
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column;transition:background .2s,color .2s;}
 
+/* LOGIN SCREEN */
 .login-screen{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9000;padding:32px;}
 .login-screen.hidden{display:none;}
 .login-logo{font-family:'Bebas Neue',sans-serif;font-size:48px;letter-spacing:4px;color:var(--text);margin-bottom:8px;}
 .login-logo span{color:var(--accent);}
 .login-tagline{font-size:13px;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:1px;margin-bottom:48px;text-align:center;}
-.login-card{background:var(--surface);border:1px solid var(--border2);border-radius:20px;padding:32px;width:100%;max-width:360px;display:flex;flex-direction:column;align-items:center;gap:16px;box-shadow:0 8px 40px var(--shadow);}
+.login-card{background:var(--surface);border:1px solid var(--border2);border-radius:20px;padding:32px;width:100%;max-width:360px;display:flex;flex-direction:column;align-items:center;gap:20px;box-shadow:0 8px 40px var(--shadow);}
 .login-card-title{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;color:var(--text);}
 .login-card-sub{font-size:12px;color:var(--muted);font-family:'DM Mono',monospace;text-align:center;line-height:1.6;}
 .google-btn{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #ddd;border-radius:10px;padding:12px 24px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;color:#333;transition:all .15s;width:100%;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.1);}
 .google-btn:hover{box-shadow:0 4px 16px rgba(0,0,0,.15);transform:translateY(-1px);}
 .google-btn img{width:20px;height:20px;}
-.auth-input{width:100%;padding:12px;border-radius:8px;border:1px solid var(--border);background:var(--surface2);color:var(--text);font-size:14px;outline:none;font-family:'DM Sans',sans-serif;transition:border-color .15s;}
-.auth-input:focus{border-color:var(--accent);}
-.auth-input::placeholder{color:var(--muted2);}
-.auth-btn{width:100%;padding:12px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-size:14px;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:500;transition:opacity .15s;}
-.auth-btn:hover{opacity:.85;}
-.auth-btn.secondary{background:transparent;color:var(--accent);border:1px solid var(--accent);}
-.auth-divider{width:100%;display:flex;align-items:center;gap:10px;color:var(--muted2);font-size:11px;font-family:'DM Mono',monospace;}
-.auth-divider::before,.auth-divider::after{content:'';flex:1;height:1px;background:var(--border);}
 .login-note{font-size:10px;color:var(--muted2);font-family:'DM Mono',monospace;text-align:center;line-height:1.6;}
-.env-badge{font-size:9px;padding:3px 8px;border-radius:4px;font-family:'DM Mono',monospace;letter-spacing:1px;}
-.env-badge.prod{background:var(--green-bg);color:var(--green);border:1px solid var(--green-border);}
-.env-badge.dev{background:var(--yellow-bg);color:var(--yellow);border:1px solid #4a3a10;}
 
+/* LOADING SCREEN */
 .loading-screen{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:8000;}
 .loading-screen.hidden{display:none;}
 .loading-logo{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:4px;color:var(--text);margin-bottom:16px;}
@@ -63,8 +54,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 .loading-dot:nth-child(2){animation-delay:.2s;}
 .loading-dot:nth-child(3){animation-delay:.4s;}
 @keyframes dotpulse{0%,80%,100%{opacity:.2;transform:scale(.8)}40%{opacity:1;transform:scale(1)}}
-.loading-sub{font-size:11px;color:var(--muted2);font-family:'DM Mono',monospace;margin-top:12px;}
 
+/* HEADER */
 header{display:flex;align-items:center;justify-content:space-between;padding:16px 24px 12px;border-bottom:1px solid var(--border);background:var(--surface);position:sticky;top:0;z-index:100;gap:10px;flex-wrap:wrap;box-shadow:0 2px 12px var(--shadow);}
 .logo{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:3px;color:var(--text);display:flex;align-items:baseline;gap:4px;white-space:nowrap;}
 .logo span{color:var(--accent);font-size:26px;}
@@ -77,13 +68,18 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
 .today-btn:hover{background:var(--accent);color:#fff;}
 .icon-btn{background:var(--surface2);border:1px solid var(--border);color:var(--muted);width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;transition:all .15s;flex-shrink:0;}
 .icon-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-bg);}
+
+/* USER AVATAR */
 .user-avatar{width:30px;height:30px;border-radius:50%;border:2px solid var(--accent);cursor:pointer;object-fit:cover;flex-shrink:0;}
 .user-avatar-placeholder{width:30px;height:30px;border-radius:50%;border:2px solid var(--accent);background:var(--accent-bg);color:var(--accent);font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;}
+
+/* THEME TOGGLE */
 .theme-toggle{background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:3px;cursor:pointer;display:flex;align-items:center;gap:2px;transition:all .2s;}
 .theme-toggle:hover{border-color:var(--accent);}
 .tt-opt{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;transition:all .2s;}
 .tt-opt.active{background:var(--accent);color:#fff;}
 
+/* SYNC BAR */
 .sync-bar{display:flex;align-items:center;gap:8px;padding:5px 24px;background:var(--surface);border-bottom:1px solid var(--border);font-family:'DM Mono',monospace;font-size:10px;color:var(--muted2);min-height:28px;}
 .sync-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;background:var(--muted2);transition:background .3s;}
 .sync-dot.syncing{background:var(--yellow);animation:pulse 1s infinite;}
@@ -95,6 +91,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
 .signout-btn{background:none;border:1px solid var(--border);color:var(--muted);border-radius:4px;padding:2px 8px;cursor:pointer;font-family:'DM Mono',monospace;font-size:9px;transition:all .15s;}
 .signout-btn:hover{border-color:var(--red);color:var(--red);}
 
+/* STREAK + WEEK */
 .info-bar{display:flex;gap:0;padding:0 24px;background:var(--surface);border-bottom:1px solid var(--border);flex-wrap:wrap;align-items:stretch;}
 .streak-block{display:flex;align-items:center;gap:10px;padding:10px 16px 10px 0;border-right:1px solid var(--border);margin-right:16px;flex-shrink:0;}
 .streak-fire{font-size:18px;line-height:1;}
@@ -111,6 +108,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
 .week-dot.today-dot{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset;}
 .week-dot.future-dot{opacity:.4;}
 
+/* STATS */
 .stats-bar{display:flex;gap:0;padding:0 24px;background:var(--surface);border-bottom:1px solid var(--border);flex-wrap:wrap;overflow-x:auto;}
 .stat{padding:8px 16px;display:flex;align-items:center;gap:8px;font-size:12px;white-space:nowrap;}
 .stat-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
@@ -120,6 +118,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
 .stat-label{color:var(--muted);font-size:11px;}
 .stat-sep{width:1px;background:var(--border);margin:6px 0;align-self:stretch;flex-shrink:0;}
 
+/* CALENDAR */
 .cal-wrap{flex:1;padding:20px 24px 32px;max-width:1100px;width:100%;margin:0 auto;}
 .day-labels{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-bottom:5px;}
 .day-label{text-align:center;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:var(--muted2);padding:5px 0;text-transform:uppercase;}
@@ -146,6 +145,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
 .status-dot.good{background:var(--green);}.status-dot.bad{background:var(--red);}
 .note-indicator{position:absolute;bottom:4px;right:6px;font-size:7px;opacity:.5;}
 
+/* MODAL */
 .modal-overlay{position:fixed;inset:0;background:var(--overlay);display:flex;align-items:flex-end;justify-content:center;z-index:1000;opacity:0;pointer-events:none;transition:opacity .2s;padding:0;}
 .modal-overlay.open{opacity:1;pointer-events:all;}
 .modal{background:var(--surface);border:1px solid var(--border2);border-radius:20px 20px 0 0;width:100%;max-width:520px;max-height:92vh;display:flex;flex-direction:column;transform:translateY(100%);transition:transform .3s cubic-bezier(.32,.72,0,1);overflow:hidden;}
@@ -196,6 +196,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
 .modal-body::-webkit-scrollbar{width:3px;}
 .modal-body::-webkit-scrollbar-thumb{background:var(--border2);border-radius:99px;}
 
+/* SETTINGS */
 .settings-panel{position:fixed;top:64px;right:16px;width:300px;background:var(--surface);border:1px solid var(--border2);border-radius:14px;padding:18px;z-index:200;box-shadow:0 8px 40px var(--shadow);display:none;max-height:80vh;overflow-y:auto;}
 .settings-panel.open{display:block;}
 .settings-title{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;color:var(--text);margin-bottom:14px;}
@@ -211,9 +212,8 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
 .preset-btn:hover,.preset-btn.active{background:var(--accent-bg);border-color:var(--accent);color:var(--accent);}
 .settings-divider{height:1px;background:var(--border);margin:2px 0;}
 .settings-note{font-size:9px;color:var(--muted2);font-family:'DM Mono',monospace;line-height:1.6;}
-.url-save-btn{background:var(--accent-bg);border:1px solid var(--accent);color:var(--accent);border-radius:8px;padding:7px 14px;cursor:pointer;font-family:'DM Mono',monospace;font-size:11px;transition:all .15s;align-self:flex-start;}
-.url-save-btn:hover{background:var(--accent);color:#fff;}
 
+/* CARRY FORWARD */
 .cf-overlay{position:fixed;inset:0;background:var(--overlay);display:flex;align-items:flex-end;justify-content:center;z-index:3000;opacity:0;pointer-events:none;transition:opacity .2s;}
 .cf-overlay.open{opacity:1;pointer-events:all;}
 .cf-modal{background:var(--surface);border:1px solid var(--border2);border-radius:20px 20px 0 0;width:100%;max-width:520px;max-height:80vh;display:flex;flex-direction:column;overflow:hidden;transform:translateY(100%);transition:transform .3s cubic-bezier(.32,.72,0,1);}
@@ -232,6 +232,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
 .cf-btn{flex:1;padding:11px;border-radius:8px;cursor:pointer;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;transition:all .15s;border:1px solid var(--border);background:var(--surface2);color:var(--muted);}
 .cf-btn.primary{background:var(--accent);border-color:var(--accent);color:#fff;}
 
+/* CONFETTI */
 #confetti-canvas{position:fixed;inset:0;pointer-events:none;z-index:9999;}
 
 @media(max-width:480px){
@@ -255,7 +256,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
 
 <canvas id="confetti-canvas"></canvas>
 
-<!-- LOADING -->
+<!-- LOADING SCREEN -->
 <div class="loading-screen" id="loadingScreen">
   <div class="loading-logo">Day<span>S</span>core</div>
   <div class="loading-dots">
@@ -263,21 +264,26 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
     <div class="loading-dot"></div>
     <div class="loading-dot"></div>
   </div>
-  <div class="loading-sub" id="loadingSub">checking session…</div>
 </div>
 
-<!-- LOGIN -->
+<!-- LOGIN SCREEN -->
 <div class="login-screen hidden" id="loginScreen">
   <div class="login-logo">Day<span>S</span>core <span style="font-size:32px;color:var(--muted)">Sync</span></div>
   <div class="login-tagline">track your days. own your progress.</div>
   <div class="login-card">
     <div class="login-card-title">Welcome</div>
-    <div id="loginFields" style="width:100%;display:flex;flex-direction:column;gap:12px;"></div>
+    <div class="login-card-sub">Sign in to sync your tasks across all your devices automatically.</div>
+    <button class="google-btn" id="googleSignInBtn">
+      <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google">
+      Continue with Google
+    </button>
+    <div class="login-note">Your data is stored privately in your own Google account. Nobody else can see it.</div>
   </div>
 </div>
 
 <!-- MAIN APP -->
 <div id="mainApp" style="display:none;flex-direction:column;min-height:100vh;">
+
 <header>
   <div class="logo">Day<span>S</span>core Sync</div>
   <div class="month-nav">
@@ -291,10 +297,11 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
       <div class="tt-opt active" id="ttDark">🌙</div>
       <div class="tt-opt" id="ttLight">☀️</div>
     </div>
-    <button class="icon-btn" id="settingsBtn">&#9881;</button>
+    <button class="icon-btn" id="settingsBtn" title="Settings">&#9881;</button>
     <div class="user-avatar-placeholder" id="userAvatar">?</div>
   </div>
 </header>
+
 <div class="sync-bar">
   <div class="sync-dot" id="syncDot"></div>
   <span class="sync-text" id="syncText">Loading…</span>
@@ -303,6 +310,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
     <button class="signout-btn" id="signOutBtn">Sign out</button>
   </div>
 </div>
+
 <div class="info-bar">
   <div class="streak-block">
     <div class="streak-fire">🔥</div>
@@ -313,6 +321,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
   </div>
   <div class="week-view" id="weekView"></div>
 </div>
+
 <div class="stats-bar">
   <div class="stat"><div class="stat-dot green"></div><span class="stat-val green" id="statGood">0</span><span class="stat-label">good</span></div>
   <div class="stat-sep"></div>
@@ -322,6 +331,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
   <div class="stat-sep"></div>
   <div class="stat"><span class="stat-val" id="statRate" style="color:var(--accent)">—</span><span class="stat-label">success</span></div>
 </div>
+
 <div class="cal-wrap">
   <div class="day-labels">
     <div class="day-label">Sun</div><div class="day-label">Mon</div><div class="day-label">Tue</div>
@@ -329,7 +339,8 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
   </div>
   <div class="calendar" id="calendar"></div>
 </div>
-</div>
+
+</div><!-- end mainApp -->
 
 <!-- SETTINGS -->
 <div class="settings-panel" id="settingsPanel">
@@ -353,12 +364,12 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
   <div class="settings-divider"></div>
   <div class="settings-section">
     <div class="settings-label">DESKTOP WIDGET SYNC</div>
-    <div class="settings-note">Export your data so the desktop widget can read it.</div>
+    <div class="settings-note">Export your data so the desktop widget can read it. Put the downloaded file in your dayscore-widget folder.</div>
     <button class="url-save-btn" id="exportWidgetBtn">⬇ Export to Widget</button>
   </div>
   <div class="settings-divider"></div>
   <div class="settings-section">
-    <div class="settings-note" id="envNote"></div>
+    <div class="settings-note">Data is stored securely in Firebase under your Google account. Nobody else can access your tasks.</div>
   </div>
 </div>
 
@@ -412,52 +423,27 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
   </div>
 </div>
 
-<script src="./firebase-config.js"></script>
+<!-- FIREBASE -->
 <script type="module">
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
-import {
-  getAuth, GoogleAuthProvider,
-  signInWithPopup, signInWithEmailAndPassword,
-  createUserWithEmailAndPassword, signOut,
-  onAuthStateChanged, setPersistence, indexedDBLocalPersistence
-} from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
-import { getFirestore, doc, getDoc, setDoc, enableIndexedDbPersistence } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
+import { getFirestore, doc, getDoc, setDoc } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
 
-// ── ENVIRONMENT DETECTION ──────────────────────────────────────
-const isGitHub  = window.location.hostname.includes('github.io');
-const isAndroid = /Android/i.test(navigator.userAgent);
-const isNative  = typeof window.Capacitor !== 'undefined';
-const isProd    = isGitHub || isAndroid || isNative;
+const firebaseConfig = {
+  apiKey: "AIzaSyAV_y2lXisSG2DYnosjRP6e5x6ZOVr9IJQ",
+  authDomain: "dayscore-sync.firebaseapp.com",
+  projectId: "dayscore-sync",
+  storageBucket: "dayscore-sync.firebasestorage.app",
+  messagingSenderId: "1042840162617",
+  appId: "1:1042840162617:web:69d9a06d7f53add18758e8"
+};
 
-const runtimeConfig = window.__DAYSCORE_FIREBASE_CONFIG__;
-if (!runtimeConfig?.prod || !runtimeConfig?.dev) {
-  throw new Error('Missing Firebase config. Create firebase-config.js from firebase-config.example.js.');
-}
-
-const PROD_CONFIG = runtimeConfig.prod;
-const DEV_CONFIG = runtimeConfig.dev;
-
-const firebaseConfig = isProd ? PROD_CONFIG : DEV_CONFIG;
-const envLabel = isProd ? 'PROD' : 'DEV';
-
-const fbApp = initializeApp(firebaseConfig);
-const auth  = getAuth(fbApp);
-const db    = getFirestore(fbApp);
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
 const provider = new GoogleAuthProvider();
 
-// ── CRITICAL: Use IndexedDB persistence — works in Android WebView ──
-// This is the key fix — IndexedDB persists across app restarts on Android
-// Unlike localStorage which can be cleared by the WebView
-await setPersistence(auth, indexedDBLocalPersistence);
-
-// Also enable Firestore offline persistence
-try {
-  await enableIndexedDbPersistence(db);
-} catch(e) {
-  // Already enabled or not supported — fine either way
-}
-
-// ── STATE ──────────────────────────────────────────────────────
+// ── STATE ──────────────────────────────────────────
 const THEME_KEY = 'dayscore_theme';
 const CF_KEY    = 'dayscore_cf_date';
 let state = { tasks:{}, notes:{}, threshold:50 };
@@ -466,13 +452,10 @@ let saveTimer = null;
 
 function getThreshold(){ return (state.threshold||50)/100; }
 
-// Show env info in settings
-document.getElementById('envNote').textContent =
-  `Running on: ${envLabel} (${firebaseConfig.projectId})`;
-
-// ── THEME ──────────────────────────────────────────────────────
+// ── THEME ──────────────────────────────────────────
 function initTheme(){
-  applyTheme(localStorage.getItem(THEME_KEY)||'dark');
+  const saved = localStorage.getItem(THEME_KEY)||'dark';
+  applyTheme(saved);
 }
 function applyTheme(t){
   document.documentElement.setAttribute('data-theme',t);
@@ -484,170 +467,81 @@ document.getElementById('themeToggle').addEventListener('click',()=>{
   applyTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');
 });
 
-// ── LOGIN UI ───────────────────────────────────────────────────
-function renderLoginUI(){
-  const fields = document.getElementById('loginFields');
-
-  if(!isNative && !isAndroid){
-    // Web — show Google Sign In + email option
-    fields.innerHTML = `
-      <button class="google-btn" id="googleSignInBtn">
-        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google">
-        Continue with Google
-      </button>
-      <div class="auth-divider">or</div>
-      <input class="auth-input" id="emailInput" type="email" placeholder="Email address">
-      <div style="position:relative;width:100%">
-        <input class="auth-input" id="passwordInput" type="password" placeholder="Password (6+ chars)" style="padding-right:56px">
-        <span id="togglePwd" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);cursor:pointer;font-size:9px;font-weight:bold;color:var(--accent);font-family:'DM Mono',monospace">SHOW</span>
-      </div>
-      <button class="auth-btn" id="emailSignInBtn">Sign In with Email</button>
-      <button class="auth-btn secondary" id="emailRegisterBtn">Create Account</button>
-      <div class="login-note">Use Google Sign In for easiest access.</div>
-    `;
-    document.getElementById('googleSignInBtn').onclick = googleSignIn;
-  } else {
-    // Android — email/password only
-    fields.innerHTML = `
-      <div class="login-card-sub">Sign in with your email and password.</div>
-      <input class="auth-input" id="emailInput" type="email" placeholder="Email address" autocomplete="email">
-      <div style="position:relative;width:100%">
-        <input class="auth-input" id="passwordInput" type="password" placeholder="Password" style="padding-right:56px" autocomplete="current-password">
-        <span id="togglePwd" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);cursor:pointer;font-size:9px;font-weight:bold;color:var(--accent);font-family:'DM Mono',monospace">SHOW</span>
-      </div>
-      <button class="auth-btn" id="emailSignInBtn">Sign In</button>
-      <button class="auth-btn secondary" id="emailRegisterBtn">Create New Account</button>
-      <div class="login-note" style="color:var(--yellow)">Using: ${envLabel} — ${firebaseConfig.projectId}</div>
-    `;
-  }
-
-  // Wire up password toggle
-  const toggleBtn = document.getElementById('togglePwd');
-  const passInput = document.getElementById('passwordInput');
-  if(toggleBtn && passInput){
-    toggleBtn.onclick = () => {
-      passInput.type = passInput.type === 'password' ? 'text' : 'password';
-      toggleBtn.textContent = passInput.type === 'password' ? 'SHOW' : 'HIDE';
-    };
-  }
-
-  document.getElementById('emailSignInBtn').onclick = emailSignIn;
-  document.getElementById('emailRegisterBtn').onclick = emailRegister;
-}
-
-// ── AUTH FUNCTIONS ─────────────────────────────────────────────
-async function googleSignIn(){
+// ── FIREBASE AUTH ──────────────────────────────────
+document.getElementById('googleSignInBtn').addEventListener('click', async ()=>{
   try {
     await signInWithPopup(auth, provider);
-  } catch(e){
-    console.error('Google sign in error:', e.code, e.message);
-    alert('Google sign in failed. Try email/password instead.');
+  } catch(e) {
+    console.error('Sign in failed:', e);
+    alert('Sign in failed. Please try again.');
   }
-}
-
-async function emailSignIn(){
-  const email    = document.getElementById('emailInput')?.value?.trim()?.toLowerCase();
-  const password = document.getElementById('passwordInput')?.value;
-  if(!email || !password){ alert('Please enter both email and password.'); return; }
-  try {
-    setSyncStatus('syncing','Signing in…');
-    await signInWithEmailAndPassword(auth, email, password);
-  } catch(e){
-    console.error('Email sign in error:', e.code);
-    setSyncStatus('error','Sign in failed');
-    if(e.code === 'auth/user-not-found' || e.code === 'auth/invalid-credential' || e.code === 'auth/wrong-password'){
-      alert(`No account found for this email on ${envLabel}. Please create an account first.`);
-    } else if(e.code === 'auth/invalid-email'){
-      alert('Please enter a valid email address.');
-    } else {
-      alert('Sign in failed: ' + e.code);
-    }
-  }
-}
-
-async function emailRegister(){
-  const email    = document.getElementById('emailInput')?.value?.trim()?.toLowerCase();
-  const password = document.getElementById('passwordInput')?.value;
-  if(!email || !password){ alert('Please enter email and password.'); return; }
-  if(password.length < 6){ alert('Password must be at least 6 characters.'); return; }
-  try {
-    await createUserWithEmailAndPassword(auth, email, password);
-    alert(`Account created on ${envLabel}! You are now signed in.`);
-  } catch(e){
-    console.error('Register error:', e.code);
-    if(e.code === 'auth/email-already-in-use'){
-      alert('An account with this email already exists. Please sign in instead.');
-    } else {
-      alert('Registration failed: ' + e.code);
-    }
-  }
-}
-
-document.getElementById('signOutBtn').addEventListener('click', async () => {
-  if(confirm('Sign out of DayScore Sync?')){ await signOut(auth); }
 });
 
-// ── AUTH STATE LISTENER ────────────────────────────────────────
-// This fires on every app start — if session persisted it fires with the user
-// immediately without needing to sign in again
-onAuthStateChanged(auth, async (user) => {
-  const loadingScreen = document.getElementById('loadingScreen');
-  const loginScreen   = document.getElementById('loginScreen');
-  const mainApp       = document.getElementById('mainApp');
+document.getElementById('signOutBtn').addEventListener('click', async ()=>{
+  if(confirm('Sign out of DayScore Sync?')){
+    await signOut(auth);
+  }
+});
 
+onAuthStateChanged(auth, async (user) => {
   if(user){
     currentUser = user;
-    document.getElementById('loadingSub').textContent = 'loading your data…';
-
-    // Set user info in header
-    document.getElementById('userEmail').textContent = user.email + ' (' + envLabel + ')';
-    const avatar = document.getElementById('userAvatar');
-    if(user.photoURL){
-      avatar.outerHTML = `<img class="user-avatar" id="userAvatar" src="${user.photoURL}" alt="avatar">`;
-    } else {
-      avatar.textContent = user.displayName ? user.displayName[0].toUpperCase() : user.email[0].toUpperCase();
-    }
-
-    // Load data then show app
+    showApp(user);
     await loadFromFirebase();
     updateSettingsUI();
     renderCalendar();
     checkCarryForward();
     requestNotifPermission();
-
-    loadingScreen.classList.add('hidden');
-    loginScreen.classList.add('hidden');
-    mainApp.style.display = 'flex';
-
   } else {
     currentUser = null;
-    loadingScreen.classList.add('hidden');
-    loginScreen.classList.remove('hidden');
-    mainApp.style.display = 'none';
-    renderLoginUI();
+    showLogin();
   }
 });
 
-// ── FIRESTORE ──────────────────────────────────────────────────
+function showLogin(){
+  document.getElementById('loadingScreen').classList.add('hidden');
+  document.getElementById('loginScreen').classList.remove('hidden');
+  document.getElementById('mainApp').style.display = 'none';
+}
+
+function showApp(user){
+  document.getElementById('loadingScreen').classList.add('hidden');
+  document.getElementById('loginScreen').classList.add('hidden');
+  const mainApp = document.getElementById('mainApp');
+  mainApp.style.display = 'flex';
+
+  // Set user info
+  document.getElementById('userEmail').textContent = user.email;
+  const avatar = document.getElementById('userAvatar');
+  if(user.photoURL){
+    avatar.outerHTML = `<img class="user-avatar" id="userAvatar" src="${user.photoURL}" alt="avatar">`;
+  } else {
+    avatar.textContent = user.displayName ? user.displayName[0].toUpperCase() : '?';
+  }
+}
+
+// ── FIRESTORE ──────────────────────────────────────
 function setSyncStatus(s,t){
-  document.getElementById('syncDot').className = 'sync-dot ' + s;
-  document.getElementById('syncText').textContent = t;
+  document.getElementById('syncDot').className='sync-dot '+s;
+  document.getElementById('syncText').textContent=t;
 }
 
 async function loadFromFirebase(){
   if(!currentUser) return;
   setSyncStatus('syncing','Loading your data…');
   try {
-    const snap = await getDoc(doc(db,'users',currentUser.uid));
-    if(snap.exists()){
-      state = Object.assign({tasks:{},notes:{},threshold:50}, snap.data());
+    const docRef = doc(db, 'users', currentUser.uid);
+    const docSnap = await getDoc(docRef);
+    if(docSnap.exists()){
+      const data = docSnap.data();
+      state = Object.assign({tasks:{},notes:{},threshold:50}, data);
       setSyncStatus('synced','Synced · '+new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}));
     } else {
-      setSyncStatus('synced','Ready — start adding tasks!');
+      setSyncStatus('synced','Welcome! Start adding tasks.');
     }
   } catch(e){
     setSyncStatus('error','Could not load data');
-    console.error('Firestore load error:', e);
+    console.error(e);
   }
 }
 
@@ -655,18 +549,23 @@ async function saveToFirebase(){
   if(!currentUser) return;
   setSyncStatus('syncing','Saving…');
   try {
-    await setDoc(doc(db,'users',currentUser.uid), state);
+    const docRef = doc(db, 'users', currentUser.uid);
+    await setDoc(docRef, state);
     setSyncStatus('synced','Saved · '+new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}));
   } catch(e){
     setSyncStatus('error','Save failed');
-    console.error('Firestore save error:', e);
+    console.error(e);
   }
 }
 
-function scheduleSave(){ clearTimeout(saveTimer); saveTimer = setTimeout(saveToFirebase, 1500); }
+function scheduleSave(){
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(saveToFirebase, 1500);
+}
+
 function persist(){ scheduleSave(); }
 
-// ── DATE HELPERS ───────────────────────────────────────────────
+// ── DATE HELPERS ───────────────────────────────────
 let viewYear, viewMonth;
 function today(){ const d=new Date(); return {y:d.getFullYear(),m:d.getMonth(),d:d.getDate()}; }
 function toKey(y,m,d){ return `${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`; }
@@ -683,7 +582,7 @@ function dayStatus(key){
   return (tasks.filter(t=>t.done).length/tasks.length)>=getThreshold()?'good':'bad';
 }
 
-// ── STREAK ─────────────────────────────────────────────────────
+// ── STREAK ─────────────────────────────────────────
 function calcStreak(){
   const t=today(); let streak=0;
   if(dayStatus(toKey(t.y,t.m,t.d))==='good') streak=1;
@@ -701,7 +600,7 @@ function renderStreak(){
   document.getElementById('streakSub').textContent=s===0?'start today!':s===1?'keep it up!':s<7?`${s} days strong!`:`${s} days 🏆`;
 }
 
-// ── WEEK VIEW ──────────────────────────────────────────────────
+// ── WEEK VIEW ──────────────────────────────────────
 function renderWeekView(){
   const t=today(), dow=new Date(t.y,t.m,t.d).getDay();
   let html='';
@@ -720,7 +619,7 @@ function renderWeekView(){
   document.getElementById('weekView').innerHTML=html;
 }
 
-// ── CALENDAR ───────────────────────────────────────────────────
+// ── CALENDAR ───────────────────────────────────────
 function renderCalendar(){
   const cal=document.getElementById('calendar');
   const firstDay=new Date(viewYear,viewMonth,1).getDay();
@@ -763,7 +662,7 @@ function renderStats(){
   document.getElementById('statRate').textContent=j>0?Math.round((good/j)*100)+'%':'—';
 }
 
-// ── MODAL ──────────────────────────────────────────────────────
+// ── MODAL ──────────────────────────────────────────
 let activeKey=null;
 window.openModal=function(key){
   activeKey=key;
@@ -782,6 +681,7 @@ window.openModal=function(key){
   document.getElementById('modalOverlay').classList.add('open');
   document.getElementById('newTaskInput').focus();
 };
+
 function closeModal(){ document.getElementById('modalOverlay').classList.remove('open'); activeKey=null; }
 
 function renderTaskList(){
@@ -816,20 +716,24 @@ window.toggleTask=function(i){
   if(!activeKey||!state.tasks[activeKey]) return;
   state.tasks[activeKey][i].done=!state.tasks[activeKey][i].done;
   persist(); renderTaskList(); renderCalendar(); openModal(activeKey);
-  if(state.tasks[activeKey].every(t=>t.done)) launchConfetti();
+  const tasks=state.tasks[activeKey];
+  if(tasks&&tasks.length>0&&tasks.every(t=>t.done)) launchConfetti();
 };
+
 window.deleteTask=function(i){
   if(!activeKey||!state.tasks[activeKey]) return;
   state.tasks[activeKey].splice(i,1);
   if(!state.tasks[activeKey].length) delete state.tasks[activeKey];
   persist(); renderTaskList(); renderCalendar(); openModal(activeKey);
 };
+
 window.editTask=function(i,text){
   if(!activeKey||!state.tasks[activeKey]) return;
   if(!text){deleteTask(i);return;}
   state.tasks[activeKey][i].text=text;
   persist(); renderCalendar();
 };
+
 window.editTime=function(i){
   if(!activeKey||!state.tasks[activeKey]) return;
   const cur=state.tasks[activeKey][i].time||'';
@@ -839,27 +743,12 @@ window.editTime=function(i){
   persist(); renderTaskList();
 };
 
-document.getElementById('addTaskBtn').addEventListener('click',()=>{
-  const inp=document.getElementById('newTaskInput'), time=document.getElementById('newTaskTime').value;
-  const text=inp.value.trim();
-  if(!text||!activeKey) return;
+function addTask(text,time){
+  text=text.trim(); if(!text||!activeKey) return;
   if(!state.tasks[activeKey]) state.tasks[activeKey]=[];
   state.tasks[activeKey].push({id:Date.now(),text,done:false,time:time||''});
-  inp.value=''; document.getElementById('newTaskTime').value='';
   persist(); renderTaskList(); renderCalendar();
-});
-
-document.getElementById('newTaskInput').addEventListener('keydown',e=>{
-  if(e.key==='Enter'){
-    const time=document.getElementById('newTaskTime').value;
-    const text=e.target.value.trim();
-    if(!text||!activeKey) return;
-    if(!state.tasks[activeKey]) state.tasks[activeKey]=[];
-    state.tasks[activeKey].push({id:Date.now(),text,done:false,time:time||''});
-    e.target.value=''; document.getElementById('newTaskTime').value='';
-    persist(); renderTaskList(); renderCalendar();
-  }
-});
+}
 
 document.getElementById('noteInput').addEventListener('blur',()=>{
   if(!activeKey) return;
@@ -869,7 +758,7 @@ document.getElementById('noteInput').addEventListener('blur',()=>{
   persist(); renderCalendar();
 });
 
-// ── CARRY FORWARD ──────────────────────────────────────────────
+// ── CARRY FORWARD ──────────────────────────────────
 let cfSelected=new Set();
 function checkCarryForward(){
   const t=today(), todayK=toKey(t.y,t.m,t.d);
@@ -885,16 +774,25 @@ function checkCarryForward(){
   localStorage.setItem(CF_KEY,todayK);
   window._cfTasks=yestTasks;
 }
-window.toggleCF=function(i){ const el=document.getElementById('cf-'+i); if(cfSelected.has(i)){cfSelected.delete(i);el.classList.remove('selected');}else{cfSelected.add(i);el.classList.add('selected');} };
+
+window.toggleCF=function(i){
+  const el=document.getElementById('cf-'+i);
+  if(cfSelected.has(i)){cfSelected.delete(i);el.classList.remove('selected');}
+  else{cfSelected.add(i);el.classList.add('selected');}
+};
+
 window.confirmCF=function(){
   const t=today(), todayK=toKey(t.y,t.m,t.d);
   if(!state.tasks[todayK]) state.tasks[todayK]=[];
-  (window._cfTasks||[]).forEach((task,i)=>{ if(cfSelected.has(i)) state.tasks[todayK].push({id:Date.now()+i,text:task.text,done:false,time:task.time||''}); });
+  (window._cfTasks||[]).forEach((task,i)=>{
+    if(cfSelected.has(i)) state.tasks[todayK].push({id:Date.now()+i,text:task.text,done:false,time:task.time||''});
+  });
   persist(); renderCalendar(); closeCF();
 };
+
 window.closeCF=function(){ document.getElementById('cfOverlay').classList.remove('open'); };
 
-// ── CONFETTI ───────────────────────────────────────────────────
+// ── CONFETTI ───────────────────────────────────────
 function launchConfetti(){
   const canvas=document.getElementById('confetti-canvas');
   const ctx=canvas.getContext('2d');
@@ -906,7 +804,7 @@ function launchConfetti(){
   draw();
 }
 
-// ── NOTIFICATIONS ──────────────────────────────────────────────
+// ── NOTIFICATIONS ──────────────────────────────────
 function requestNotifPermission(){ if('Notification'in window&&Notification.permission==='default') Notification.requestPermission(); }
 function checkDueNotifications(){
   if(!('Notification'in window)||Notification.permission!=='granted') return;
@@ -921,7 +819,19 @@ function checkDueNotifications(){
 }
 setInterval(checkDueNotifications,60000);
 
-// ── SETTINGS ───────────────────────────────────────────────────
+// ── EXPORT TO WIDGET ───────────────────────────────
+function exportToWidget(){
+  const data = JSON.stringify(state, null, 2);
+  const blob = new Blob([data], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'dayscore-cache.json';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+document.getElementById('exportWidgetBtn').addEventListener('click', exportToWidget);
 const TDESC={10:'just show up',25:'light effort counts',50:'complete half or more',75:'almost everything done',100:'every single task'};
 function thresholdDesc(v){ const keys=Object.keys(TDESC).map(Number).sort((a,b)=>a-b); for(let i=keys.length-1;i>=0;i--) if(v>=keys[i]) return TDESC[keys[i]]; return ''; }
 function updateSettingsUI(){
@@ -933,12 +843,15 @@ function updateSettingsUI(){
 }
 window.setPreset=function(v){ state.threshold=v; persist(); updateSettingsUI(); renderCalendar(); };
 document.getElementById('thresholdSlider').addEventListener('input',e=>{ state.threshold=parseInt(e.target.value); persist(); updateSettingsUI(); renderCalendar(); });
-document.getElementById('exportWidgetBtn').addEventListener('click',()=>{
-  const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});
-  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='dayscore-cache.json'; a.click();
-});
 
-// ── EVENTS ─────────────────────────────────────────────────────
+// ── EVENTS ─────────────────────────────────────────
+document.getElementById('addTaskBtn').addEventListener('click',()=>{
+  const inp=document.getElementById('newTaskInput'), time=document.getElementById('newTaskTime').value;
+  addTask(inp.value,time); inp.value=''; document.getElementById('newTaskTime').value=''; inp.focus();
+});
+document.getElementById('newTaskInput').addEventListener('keydown',e=>{
+  if(e.key==='Enter'){ addTask(e.target.value,document.getElementById('newTaskTime').value); e.target.value=''; document.getElementById('newTaskTime').value=''; }
+});
 document.getElementById('closeBtn').addEventListener('click',closeModal);
 document.getElementById('modalOverlay').addEventListener('click',e=>{ if(e.target===document.getElementById('modalOverlay'))closeModal(); });
 document.getElementById('cfOverlay').addEventListener('click',e=>{ if(e.target===document.getElementById('cfOverlay'))closeCF(); });
@@ -949,16 +862,17 @@ document.getElementById('todayBtn').addEventListener('click',()=>{ const t=today
 document.getElementById('settingsBtn').addEventListener('click',e=>{ e.stopPropagation(); document.getElementById('settingsPanel').classList.toggle('open'); });
 document.addEventListener('click',e=>{ const p=document.getElementById('settingsPanel'); if(!p.contains(e.target)&&e.target.id!=='settingsBtn')p.classList.remove('open'); });
 
-// Reload data when app comes back to foreground
+// ── INIT ───────────────────────────────────────────
+initTheme();
+const t=today(); viewYear=t.y; viewMonth=t.m;
+
+// Reload fix
 document.addEventListener('visibilitychange',()=>{
   if(document.visibilityState==='visible'&&currentUser){
-    loadFromFirebase().then(()=>renderCalendar());
+    loadFromFirebase().then(()=>{ renderCalendar(); });
   }
 });
 
-// ── INIT ───────────────────────────────────────────────────────
-initTheme();
-const tStart=today(); viewYear=tStart.y; viewMonth=tStart.m;
 </script>
 </body>
 </html>
