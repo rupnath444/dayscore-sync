@@ -412,6 +412,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
   </div>
 </div>
 
+<script src="./firebase-config.js"></script>
 <script type="module">
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
 import {
@@ -428,23 +429,13 @@ const isAndroid = /Android/i.test(navigator.userAgent);
 const isNative  = typeof window.Capacitor !== 'undefined';
 const isProd    = isGitHub || isAndroid || isNative;
 
-const PROD_CONFIG = {
-  apiKey: "AIzaSyAV_y2lXisSG2DYnosjRP6e5x6ZOVr9IJQ",
-  authDomain: "dayscore-sync.firebaseapp.com",
-  projectId: "dayscore-sync",
-  storageBucket: "dayscore-sync.firebasestorage.app",
-  messagingSenderId: "1042840162617",
-  appId: "1:1042840162617:web:69d9a06d7f53add18758e8"
-};
+const runtimeConfig = window.__DAYSCORE_FIREBASE_CONFIG__;
+if (!runtimeConfig?.prod || !runtimeConfig?.dev) {
+  throw new Error('Missing Firebase config. Create firebase-config.js from firebase-config.example.js.');
+}
 
-const DEV_CONFIG = {
-  apiKey: "AIzaSyAdOrswWFFKAlWgeyXLYoO7S5z3cwjvKAE",
-  authDomain: "dayscore-dev.firebaseapp.com",
-  projectId: "dayscore-dev",
-  storageBucket: "dayscore-dev.firebasestorage.app",
-  messagingSenderId: "652062894106",
-  appId: "1:652062894106:web:616c47346f55c37b0689a3"
-};
+const PROD_CONFIG = runtimeConfig.prod;
+const DEV_CONFIG = runtimeConfig.dev;
 
 const firebaseConfig = isProd ? PROD_CONFIG : DEV_CONFIG;
 const envLabel = isProd ? 'PROD' : 'DEV';
